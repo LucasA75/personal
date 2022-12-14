@@ -1,0 +1,42 @@
+/*  div{
+    background-image: url("../assets/img/giphy.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+} */
+body{
+    background: linear-gradient(to bottom left, cyan 50%, palegoldenrod 50%);
+}
+a{
+    color: aliceblue;
+}
+img{
+    margin: 20px;
+    width: 100%;
+    animation-duration: 3s;
+    animation-name: slidein;
+    animation-iteration-count: 1;
+
+}
+
+h1{
+    color: black;
+    text-decoration: underline;
+    letter-spacing: 5px;
+    animation-duration: 3s;
+    animation-name: slidein;
+    animation-iteration-count: 3;
+    animation-direction: alternate;
+}
+
+@keyframes slidein{
+    from{
+        margin-left: 100%;
+        width: 300%;
+    }
+
+    to{
+        margin-left: 0%;
+        width: 100%;
+    }
+}

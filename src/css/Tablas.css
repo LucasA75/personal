@@ -1,0 +1,20 @@
+
+.tablas{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.tabla1{
+    display: flex;
+    align-self: center;
+    background-color: bisque;
+}
+
+.tabla2{
+width: 65%;
+}
+
+.mitsubishi{
+   height: 30%;
+   width: 1000px;
+}

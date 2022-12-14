@@ -1,0 +1,10 @@
+.secret{
+    display: flex;
+    justify-content: end;
+}
+.btn{
+    display: flex;
+}
+.btn2{
+    margin: 3px;
+}
