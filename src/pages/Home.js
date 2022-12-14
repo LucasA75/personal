@@ -107,6 +107,7 @@ const HomePage = () => {
             </center>
             <TablaAutos autos={auto} autoDelete={autoDelete}/>
         </div>
+        //Holas
     );
 }
 

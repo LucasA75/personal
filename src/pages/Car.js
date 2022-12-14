@@ -12,9 +12,9 @@ const CarPage = () => {
             {/* Aqui se van colocando los componentes */}
             <Navbar/>
             <FormularioAuto/>
-            <TablaAutos />
-            <ColorSwitches/>
-            <Boton infoboton={"Vuelve al gulag"} handleOnClick={handleOnClick}/>
+            <TablaAutos /> 
+            <ColorSwitches/> 
+            <Boton infoboton={"Volver"} handleOnClick={handleOnClick}/>
         </div>
     );
 }
