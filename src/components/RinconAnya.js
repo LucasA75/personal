@@ -11,15 +11,15 @@ const RinconAnya =() =>{
             <h1>Que es esto?</h1>
             </center>
             <div>
-            <img src={Anya}/>
+            <img src={Anya} alt="anya1"/>
             </div>
             <div>
-            <img src={Anya2}/>
+            <img src={Anya2} alt="anya2"/>
             </div>
             <div>
-            <img src={Anya3}/>
+            <img src={Anya3} alt="anya3"/>
             </div>
-        </div>
+         </div> 
     )
 }
 export default RinconAnya;

@@ -1,3 +1,7 @@
 .h1{
     text-align: center;
+    background-color: aliceblue;
+    width: fit-content;
+    padding: 20px;
+    border-radius: 45px;
 }

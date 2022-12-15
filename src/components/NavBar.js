@@ -1,6 +1,15 @@
-import React from "react";
+import React,{useCallback} from "react";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+
+        /* Palabra reservada para navegar */
+        const navigate = useNavigate();
+
+        /* Aqui hago una arrow funcion y le digo primero : donde quiero ir */
+    const handleOnClick = useCallback(()=> navigate("/",{},[navigate]));
+
+    /* Asi funciona el Navbar ... porfin voy entendiendo React uFFF */
     return (
         <div>
             <nav class="navbar navbar-expand-lg bg-success">
@@ -12,7 +21,7 @@ const Navbar = () => {
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                <a class="nav-link active"   href="/" handleOnClick={handleOnClick} >Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Features</a>

@@ -7,20 +7,20 @@ import "../css/Home.css"
 const usuario1=[{
     nombre:'Joseph',
     apellido:'Joestar',
-    correo:'tumama@gmail.com',
+    correo:'Jojo@Yahoo.com',
     rut:'92342442-1'
     }
     ,
     {
     nombre:'Jose',
     apellido:'Perez',
-    correo:'comecaca@gmail.com',
+    correo:'comePasteles3000@gmail.com',
     rut:'92242342-4'
     },
     {
         nombre:'Juan Carlos',
         apellido:'Bodoque',
-    correo:'Pruebaesto@gmail.com',
+    correo:'Pruebaesto@live.cl',
     rut:'30242342-4'
     }
 ]
@@ -64,14 +64,14 @@ const HomePage = () => {
 
 
     const autoDelete=(añoAuto)=>{
-        const changeAuto = auto.filter(auto => auto.año != añoAuto);
+        const changeAuto = auto.filter(auto => auto.año !== añoAuto);
         /* al momento de ocupar la funcion de arriba yo le cambiare el valor temporal a mis usuarios */
         setAuto(changeAuto)
     }
 
 
     const userDelete=(rutUsuario)=>{
-        const changeUser = state.filter(usuario => usuario.rut != rutUsuario);
+        const changeUser = state.filter(usuario => usuario.rut !== rutUsuario);
         /* al momento de ocupar la funcion de arriba yo le cambiare el valor temporal a mis usuarios */
         setState(changeUser)
     }
@@ -101,11 +101,16 @@ const HomePage = () => {
             <Tabla1/>
             <TextoComponent/>
             <FormularioUsuario userAdd={userAdd} usuarioEditado={usuarioEditado} setUsuarioEditado={setUsuarioEditado} userEdit={userEdit}/>
+            <br></br>
+            <br></br>
             <TablaUsuarios usuarios={state} deleteUser={userDelete} setUsuarioEditado={setUsuarioEditado}/>
+            <br></br>
             <center>
-            <Boton className="btn2" infoboton={"Ir a la muerte subita"} handleOnClick={handleOnClick}/>
+            <Boton className="btn2" infoboton={"Ir a Autos"} handleOnClick={handleOnClick}/>
             </center>
-            <TablaAutos autos={auto} autoDelete={autoDelete}/>
+            {/* <TablaAutos autos={auto} autoDelete={autoDelete}/> */}
+            <br></br>
+            <br></br>
         </div>
         //Holas
     );

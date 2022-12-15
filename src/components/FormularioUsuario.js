@@ -52,6 +52,7 @@ const FormularioUsuario = ({ userAdd, usuarioEditado, setUsuarioEditado,userEdit
     }
 
     return (
+        <div className="container-lg formularioUsuario">
         <div className="F_usuario" class="container-lg">
 
             {usuarioEditado !== null ? <h1>Editar Usuario</h1> : <h1>Ingrese Usuario</h1>}
@@ -137,6 +138,7 @@ const FormularioUsuario = ({ userAdd, usuarioEditado, setUsuarioEditado,userEdit
 
                 </div>
             </form>
+        </div>
         </div>
     );
 }

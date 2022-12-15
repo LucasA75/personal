@@ -1,8 +1,11 @@
 import React from "react";
-import "../css/Formulario.css"
+import "../css/FormularioAuto.css"
 
 const FormularioAuto = () => {
     return (
+        <div>
+        <center>
+        <div className="container-lg   formularioAuto">
         <div className="F_auto"  class="container-lg">
        <center><h1>Formulario de Automovil</h1></center>
             <form class="row g-3">
@@ -42,6 +45,7 @@ const FormularioAuto = () => {
                     <label for="inputZip" class="form-label">Codigo Chasis</label>
                     <input type="text" class="form-control" id="inputZip" />
                 </div>
+                <center>
                 <div class="col-12">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="gridCheck" />
@@ -50,10 +54,14 @@ const FormularioAuto = () => {
                         </label>
                     </div>
                 </div>
+                </center>
                 <div class="col-12">
                 <center><button type="submit" class="btn btn-primary">Sign in</button></center> 
                 </div>
             </form>
+        </div>
+        </div>
+        </center>
         </div>
     );
 }
