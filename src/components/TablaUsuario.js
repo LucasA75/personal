@@ -9,7 +9,7 @@ const TablaUsuarios = ({usuarios, deleteUser, setUsuarioEditado}) => {
                 <thead>
                     <tr>
                         <th>
-                            Rut
+                            ID
                         </th>
                         <th>
                             Nombre
@@ -35,13 +35,13 @@ y realizaremos lo siguiente =>
                         
                         <tr>
                         <td>
-                            {usuario.rut}
+                            {usuario.id}
                         </td>
                         <td>
-                            {usuario.nombre}
+                            {usuario.name}
                         </td>
                         <td>
-                            {usuario.apellido}
+                            {usuario.lasname}
                         </td>
                         <td>
                             {usuario.correo}
@@ -51,7 +51,7 @@ y realizaremos lo siguiente =>
                   type="button"
                   class="btn btn-primary"
                   onClick={() => {
-                    deleteUser(usuario.rut);
+                    deleteUser(usuario.id);
                   }}
                 >
                  Eliminar

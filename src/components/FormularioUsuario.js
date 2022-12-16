@@ -6,10 +6,10 @@ import "../css/Formulario.css"
 //Te odio React
 //Buena practica colocar nombre de const initialUsuario
 const initialUsuario = {
-    nombre: "",
-    apellido: "",
+    name: "",
+    lasname: "",
     correo: "",
-    rut: ""
+    id: ""
 }
 
 
@@ -17,7 +17,7 @@ const initialUsuario = {
 const FormularioUsuario = ({ userAdd, usuarioEditado, setUsuarioEditado,userEdit }) => {
 
     const [usuario, setUsuario] = useState(initialUsuario);
-    const { nombre, apellido, correo, rut } = usuario;
+    const { name, lasname, correo, id } = usuario;
 
 
     //El hook useEffect siempre esta pendiente de si la variable que tiene dentro de sus corchetes debera hacer todo lo que tiene la funciopn dentro
@@ -29,10 +29,10 @@ const FormularioUsuario = ({ userAdd, usuarioEditado, setUsuarioEditado,userEdit
         } else {
             setUsuario(
                 {
-                    nombre: "",
-                    apellido: "",
+                    name: "",
+                    lasname: "",
                     correo: "",
-                    rut: ""
+                    id: ""
                 }
             )
         }
@@ -59,7 +59,7 @@ const FormularioUsuario = ({ userAdd, usuarioEditado, setUsuarioEditado,userEdit
 
             <form class="row g-3">
                 <div class="col-md-6">
-                    <label for="inputEmail4" class="form-label">Rut</label>
+                    <label for="inputEmail4" class="form-label">id</label>
                     <input
                         type="text"
 
@@ -67,24 +67,25 @@ const FormularioUsuario = ({ userAdd, usuarioEditado, setUsuarioEditado,userEdit
 
                         id="inputEmail4"
                         //Para que mi formulario sea capaz de crear un usuario agregamos esto
-                        name="rut"
-                        value={rut}
+                        name="id"
+                        value={id}
                         onChange={handleInputChange}
+                        disabled
                     />
                 </div>
                 <div class="col-md-6">
                     <label for="inputPassword4" class="form-label">Nombre</label>
                     <input type="text" class="form-control" id="inputPassword4"
-                        name="nombre"
-                        value={nombre}
+                        name="name"
+                        value={name}
                         onChange={handleInputChange}
                     />
                 </div>
                 <div class="col-12">
                     <label for="inputAddress" class="form-label">Apellido</label>
                     <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"
-                        name="apellido"
-                        value={apellido}
+                        name="lasname"
+                        value={lasname}
                         onChange={handleInputChange}
                     />
                 </div>

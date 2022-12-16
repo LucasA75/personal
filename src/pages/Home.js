@@ -1,8 +1,10 @@
-import React,{useCallback, useState} from "react"; /* Aqui estoy importando un hook */
+import React,{useCallback, useEffect, useState} from "react"; /* Aqui estoy importando un hook */
 import { useNavigate } from "react-router-dom";
 import { Tabla1,TextoComponent,FormularioUsuario,Navbar,Boton, TablaAutos,TablaUsuarios } from "../components";
 
 import "../css/Home.css"
+import { getAllUsers , addUser, editUser, deleteUser} from "../services/User";
+
 
 const usuario1=[{
     nombre:'Joseph',
@@ -63,6 +65,34 @@ const HomePage = () => {
     const[auto,setAuto] = useState(autos);
 
 
+    useEffect(()=>{
+        getUsers();
+    },[])
+
+    //Trae todos los usuarios de la base de Usuarios
+    const getUsers = async()=>{
+        const usuarioBD = await getAllUsers();
+        setState(usuarioBD);
+    }
+
+    const userAdd = async(usuarioAgregado) =>{
+        // En esta linea agreagamos un usuario a la base de datos
+        const usuarioBD = await addUser(usuarioAgregado);
+        //En sesta linea haremos que la tabla se actualize con los nuevos datos
+        getUsers();
+    }
+
+    const userEdit = async(usuarioEditado) =>{
+        const usuaroBD = await editUser(usuarioEditado);
+        getUsers();
+    }
+
+    const userDelete = async(idUsuario) => {
+        const usuarioBD = await deleteUser(idUsuario);
+        getUsers();
+    }
+
+
     const autoDelete=(añoAuto)=>{
         const changeAuto = auto.filter(auto => auto.año !== añoAuto);
         /* al momento de ocupar la funcion de arriba yo le cambiare el valor temporal a mis usuarios */
@@ -70,26 +100,27 @@ const HomePage = () => {
     }
 
 
-    const userDelete=(rutUsuario)=>{
+/*     const userDelete=(rutUsuario)=>{
         const changeUser = state.filter(usuario => usuario.rut !== rutUsuario);
-        /* al momento de ocupar la funcion de arriba yo le cambiare el valor temporal a mis usuarios */
+        /* al momento de ocupar la funcion de arriba yo le cambiare el valor temporal a mis usuarios 
         setState(changeUser)
-    }
+    } */
 
-    const userAdd = (usuario)=>{ // Que es esto <-
+    //Esta funcion agraega un usuario en la tabla usuariios - no la ocuparemos porque la traeremos de la base
+/*     const userAdd = (usuario)=>{ // Que es esto <-
         const addUsuario = [
             //Mantenme los datos que tengo en user y agregame o que yo tengo aqui
             ...state, usuario
         ]
-        /* Luego actualizamos el state */
+        /* Luego actualizamos el state 
         setState(addUsuario);
-    }
+    } */
 
-    const userEdit =(usuarioEditado)=>{
+/*     const userEdit =(usuarioEditado)=>{
         const editUser = state.map(usuario =>(usuario.rut === usuarioEditado.rut ? usuarioEditado: usuario))
 
         setState(editUser);
-    }
+    } */
 
     return(
         <div>
